@@ -10,8 +10,22 @@ public class HighScoreObject {
 
     public HighScoreObject( int score,String name, long timestamp){
 
+        this.score = score;
+
     }
 
+    public HighScoreObject() {
+    }
 
+    public int getScore() {
+        return score;
+    }
 
+    public String getName() {
+        return name;
+    }
+
+    public long getTimestamp() {
+        return timestamp;
+    }
 }

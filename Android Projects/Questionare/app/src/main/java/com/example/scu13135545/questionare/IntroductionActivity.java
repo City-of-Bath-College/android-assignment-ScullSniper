@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 import io.paperdb.Paper;
@@ -21,7 +23,7 @@ public class IntroductionActivity extends AppCompatActivity {
     private Button btnHighScore;
     private Button btnAbout;
     private TextView txtHighScore;
-    private int looper;
+    private ArrayList HighScores;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,9 +60,36 @@ public class IntroductionActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
         List<HighScoreObject> highScores = Paper.book().read("highscores", new ArrayList<HighScoreObject>());
 
-        txtHighScore.setText("HighScore: ", highScores.);
+        int maxScore = 0;
+//        int looper = 0;
+//        for loop
+        for (HighScoreObject h : highScores){
+
+            if (h.getScore() > maxScore){
+                maxScore = h.getScore();
+            }
+        }
+
+        //while loop
+//        while(looper < highScores.size()){
+//
+//            HighScoreObject h = highScores.get(looper);
+//            if(h.getScore() > maxScore){
+//                maxScore = h.getScore();
+//            }
+//            looper++;
+//        }
+
+
+        txtHighScore.setText("High Score is " + maxScore);
 
     }
 }
