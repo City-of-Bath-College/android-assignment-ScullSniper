@@ -6,7 +6,7 @@
     <ImageView
         android:id="@+id/introimage"
         android:layout_width="match_parent"
-        android:layout_height="200sp"
+        android:layout_height="120sp"
         android:src="@drawable/earth"
         />
 
@@ -39,22 +39,32 @@
         android:layout_centerHorizontal="true"/>
     <Button
         android:id="@+id/btnHighscore"
-        android:layout_width="240sp"
-        android:layout_height="75sp"
+        android:layout_width="240dp"
+        android:layout_height="75dp"
         android:layout_below="@+id/btnPlaybutton"
         android:paddingTop="20dp"
         android:text="High Scores"
-        android:textSize="30dp"
+        android:textSize="30sp"
         android:textAlignment="center"
         android:layout_centerHorizontal="true"/>
     <Button
         android:id="@+id/btnAbout"
-        android:layout_width="240sp"
-        android:layout_height="75sp"
+        android:layout_width="240dp"
+        android:layout_height="75dp"
         android:layout_below="@+id/btnHighscore"
         android:padding="20dp"
         android:text="About"
-        android:textSize="30dp"
+        android:textSize="30sp"
         android:layout_centerHorizontal="true"/>
+    <Button
+        android:id="@+id/btnShare"
+        android:layout_width="240dp"
+        android:layout_height="75dp"
+        android:layout_below="@+id/btnAbout"
+        android:padding="20dp"
+        android:text="Share Score"
+        android:textSize="30sp"
+        android:layout_centerHorizontal="true"
+        />
 
 </RelativeLayout>

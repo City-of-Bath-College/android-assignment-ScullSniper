@@ -22,9 +22,11 @@ public class IntroductionActivity extends AppCompatActivity {
     private Button btnPlay;
     private Button btnHighScore;
     private Button btnAbout;
+    private Button btnShare;
     private TextView txtHighScore;
     private ArrayList HighScores;
-
+    private List<HighScoreObject> highscores;
+    private int maxScore = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,10 +35,10 @@ public class IntroductionActivity extends AppCompatActivity {
         Paper.init(this);
 
 
-
         btnPlay = (Button)findViewById(R.id.btnPlaybutton);
         btnHighScore = (Button)findViewById(R.id.btnHighscore);
         btnAbout = (Button)findViewById(R.id.btnAbout);
+        btnShare = (Button)findViewById(R.id.btnShare);
         txtHighScore = (TextView)findViewById(R.id.txtHighScore);
 
         btnPlay.setOnClickListener(new View.OnClickListener() {
@@ -60,6 +62,20 @@ public class IntroductionActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+        Paper.init(this);
+
+        highscores = Paper.book().read("highscores", new ArrayList<HighScoreObject>());
+
+        btnShare.setOnClickListener(new View.OnClickListener() {
+            @Override
+                    public void onClick(View v) {
+                Intent sendIntent = new Intent();
+                sendIntent.setAction(Intent.ACTION_SEND);
+                sendIntent.putExtra(Intent.EXTRA_TEXT, "Check out my High Score = " + maxScore);
+                sendIntent.setType("text/plain");
+                startActivity(Intent.createChooser(sendIntent,getResources().getText(R.string.app_name)));
+            }
+        });
 
     }
 
@@ -68,7 +84,7 @@ public class IntroductionActivity extends AppCompatActivity {
         super.onResume();
         List<HighScoreObject> highScores = Paper.book().read("highscores", new ArrayList<HighScoreObject>());
 
-        int maxScore = 0;
+
 //        int looper = 0;
 //        for loop
         for (HighScoreObject h : highScores){
