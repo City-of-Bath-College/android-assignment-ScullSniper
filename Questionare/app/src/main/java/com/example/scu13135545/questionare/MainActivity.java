@@ -93,15 +93,15 @@ public class MainActivity extends AppCompatActivity {
 
         questions.add(new QuestionObject("Hydrogen Monoxide is dangerous", false, R.drawable.pluto));
 
-        questions.add(new QuestionObject("C⁶H¹²O⁶", true, R.drawable.pluto));
+        questions.add(new QuestionObject("C⁶H¹²O⁶ is Glucose", true, R.drawable.pluto));
+
+        questions.add(new QuestionObject("Is the Speed of light 2990m/s", true, R.drawable.pluto));
+
+        questions.add(new QuestionObject("Mitochondria is the power house of the cells", true, R.drawable.pluto));
 
         questions.add(new QuestionObject("Pluto is a dwarf planet", true, R.drawable.pluto));
 
-        questions.add(new QuestionObject("Pluto is a dwarf planet", true, R.drawable.pluto));
-
-        questions.add(new QuestionObject("Pluto is a dwarf planet", true, R.drawable.pluto));
-
-        questions.add(new QuestionObject("Pluto is a dwarf planet(end)", true, R.drawable.pluto));
+        questions.add(new QuestionObject("Is this the end", true, R.drawable.pluto));
 
     }
 
